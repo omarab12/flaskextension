@@ -1,17 +1,16 @@
 from flask import Flask
-import tempfile
+
 
 from flask_restful import Api, Resource 
 
 from bs4 import BeautifulSoup
 from flask import request, jsonify
-from tablib import Dataset
-import os
+
+
 import time
-import urllib.parse
-from werkzeug.utils import secure_filename
-import pandas
-from openpyxl import load_workbook
+
+
+
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -21,7 +20,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
-import time
+
 
 import json
 
