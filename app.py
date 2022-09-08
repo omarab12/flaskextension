@@ -22,7 +22,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.chrome.options import Options
 
-
+import html.parser
 import json
 
 app = Flask (__name__)
@@ -68,7 +68,7 @@ def upload() :
         else:
             driver.get("https://"+j)    
         src = driver.page_source
-        soup = BeautifulSoup(src,'lxml')
+        soup = BeautifulSoup(src,"html.parser")
         delay = 8  
         mynewbuttonlist=[]
         
