@@ -68,7 +68,7 @@ def upload() :
         else:
             driver.get("https://"+j)    
         src = driver.page_source
-        soup = BeautifulSoup(html,'lxml')
+        soup = BeautifulSoup(src,'lxml')
         delay = 8  
         mynewbuttonlist=[]
         
