@@ -35,7 +35,7 @@ def upload() :
 
     data = request.json
     name = request.args.get('name')
-    driver = webdriver.Chrome("C:\\Users\\smala\\Nouveau dossier\\chromedriver.exe")
+    driver = webdriver.Chrome("/site/wwwroot/chromedriver")
     driver.get("https://linkedin.com/uas/login")
     
 
