@@ -20,6 +20,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
+from selenium.webdriver.chrome.options import Options
 
 
 import json
@@ -35,7 +36,11 @@ def upload() :
 
     data = request.json
     name = request.args.get('name')
-    driver = webdriver.Chrome("/usr/bin/chromedriver")
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome("/usr/bin/chromedriver",chrome_options=chrome_options)
     driver.get("https://linkedin.com/uas/login")
     
 
