@@ -30,6 +30,26 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
         
+      - name: Install xlmx
+        run: pip install lxml
+        
+      - name: Installing chrome
+        run: |
+          curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add 
+          bash -c "echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list.d/google-chrome.list" 
+          apt -y update 
+          apt -y install google-chrome-stable 
+          google-chrome --version 
+          
+      - name: Installing chromedriver
+        run: |
+          wget https://chromedriver.storage.googleapis.com/105.0.5195.19/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip 
+          mv chromedriver /usr/bin/chromedriver 
+          chown root:root /usr/bin/chromedriver 
+          chmod +x /usr/bin/chromedriver 
+          
+        
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
