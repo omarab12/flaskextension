@@ -6,7 +6,7 @@ from flask_restful import Api, Resource
 from bs4 import BeautifulSoup
 from flask import request, jsonify
 
-
+import urllib.parse
 import time
 
 
@@ -68,7 +68,7 @@ def upload() :
         else:
             driver.get("https://"+j)    
         src = driver.page_source
-        soup = BeautifulSoup(src,"html.parser")
+        soup = BeautifulSoup(src,'lxml')
         delay = 8  
         mynewbuttonlist=[]
         
