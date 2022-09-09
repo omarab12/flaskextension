@@ -45,9 +45,9 @@ jobs:
         run: |
           sudo wget https://chromedriver.storage.googleapis.com/105.0.5195.19/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip 
-          mv chromedriver /usr/bin/chromedriver 
-          chown root:root /usr/bin/chromedriver 
-          chmod +x /usr/bin/chromedriver 
+          sudo mv chromedriver /usr/bin/chromedriver 
+          sudo chown root:root /usr/bin/chromedriver 
+          sudo chmod +x /usr/bin/chromedriver 
           
         
         
